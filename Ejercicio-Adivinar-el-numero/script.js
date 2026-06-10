@@ -43,6 +43,10 @@ for (let i = 0; countOfTried < 3; i++) {
 
 }
 
+if (countOfTried === 3 && !numberUsedNumbers.includes(secretNumber)) {
+    alert(`¡Se acabaron los intentos! El número secreto era: ${secretNumber}`);
+}
+
 //Colocamos el número secreto aunque no haya adivinado al final de los intentos máximos
 
 document.getElementById('result').innerHTML = `El nuḿero secreto era : ${secretNumber}`
