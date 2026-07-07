@@ -11,6 +11,10 @@ document.getElementById('historial').innerHTML
 //Hacemos un for para que se pregunte máximo 3 veces por el intento de adivinar el número
 //Se sale antes de este cuando adivina el user o bien se cumple el max de 3 intentos
 
+function alreadyUsed(numb, list) {
+    return list.includes(numb);
+}
+
 for (let i = 0; countOfTried < 3; i++) {
     let userNumber = parseInt(prompt(`${countOfTried + 1}/3 . Ingresa un Número del 1 al 10`));
 
@@ -22,8 +26,7 @@ for (let i = 0; countOfTried < 3; i++) {
 
     }
 
-    if (numberUsedNumbers.includes(userNumber)) {
-
+    if (alreadyUsed(userNumber, secretNumber)) {
         alert('Ya has escogido este número.')
         continue;
 
